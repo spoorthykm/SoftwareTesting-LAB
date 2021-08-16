@@ -1,0 +1,35 @@
+<body>
+    <input type="text" id="b1" placeholder="Enter first number">
+<input type="text" id="b2" placeholder="Enter second number">
+<input type="button" value="Calculate" id="btnCalc">
+ 
+<div id="result" >
+ 
+</div>
+ 
+<script>
+ 
+function area(){
+    var n1=document.getElementById("b1").value;
+    var n2=document.getElementById("b2").value;
+    var result=document.getElementById("result");
+ 
+    n1=Number(n1);
+    n2=Number(n2);
+ 
+    let  gcd = 1;
+    for(let i = 1; i <= n1 && i <= n2; ++i)
+    {
+        // Checks if i is factor of both integers
+        if(n1 % i==0 && n2 % i==0)
+            gcd = i;
+    }
+    result.textContent= "G.C.D of "+n1+" and "+n2+" is "+gcd+" \n";
+}
+ 
+ 
+var btnCalc=document.getElementById("btnCalc");
+btnCalc.onclick=area;
+</script>
+    
+</body>
